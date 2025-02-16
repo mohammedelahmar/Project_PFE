@@ -1,0 +1,20 @@
+import express from 'express';
+import { registerUser } from '../controllers/userController.js';
+import { loginUser } from '../controllers/userController.js';
+import { getUserProfile } from '../controllers/userController.js';
+import { updateUserProfile } from '../controllers/userController.js';
+import { getUsers } from '../controllers/userController.js';
+import { deleteUser } from '../controllers/userController.js';
+import { getUserById } from '../controllers/userController.js';
+import { updateUser } from '../controllers/userController.js';
+const router = express.Router();
+// User Routes
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+router.post('/profile', getUserProfile);
+router.put('/profile', updateUserProfile);
+router.get('/', getUsers);
+router.delete('/:id', deleteUser);
+router.get('/:id', getUserById);
+router.put('/:id', updateUser);
+export default router;
