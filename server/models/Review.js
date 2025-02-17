@@ -8,4 +8,6 @@ const ReviewSchema = new mongoose.Schema({
      created_at: { type: Date, default: Date.now },
      updated_at: { type: Date, default: Date.now }
  }, { timestamps: true });
+ const Review = mongoose.model('Review', ReviewSchema);
+    export default Review;
  

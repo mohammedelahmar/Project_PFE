@@ -8,4 +8,6 @@ const OrderSchema = new mongoose.Schema({
      created_at: { type: Date, default: Date.now },
      updated_at: { type: Date, default: Date.now }
  }, { timestamps: true });
+ const order = mongoose.model('Order', OrderSchema);
+
  
