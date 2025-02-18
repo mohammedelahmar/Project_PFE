@@ -1,6 +1,7 @@
 import express from 'express';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
+import cors from 'cors'; // Import the cors package
 import userRoutes from './api/routes/userRoutes.js';
 
 dotenv.config(); // Load environment variables
@@ -12,8 +13,10 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(express.json());
+app.use(cors()); // Enable CORS for all routes
+app.use(express.json()); // Parse JSON request bodies
 
+// Routes
 app.use('/api/users', userRoutes);
 
 // Start server
